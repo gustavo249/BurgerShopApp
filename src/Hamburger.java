@@ -14,6 +14,7 @@ public class Hamburger {
 
 
     private List<String> clientAdditions = new ArrayList<>();
+
     public Hamburger(double price, String breadType) {
         this.price = price;
         this.breadType = breadType;
@@ -44,16 +45,14 @@ public class Hamburger {
         clientAdditions = new ArrayList<>();
 
         int i = 0;
-        while (i < options.length) {
+        while (true) {
             int choice = JOptionPane.showOptionDialog(null, "After you select what you want on your burger press DONE",
                     null, JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
             if (choice == options.length - 1) {
-                return clientAdditions;
-            } else if (choice == i) {
-                clientAdditions.add(options[i]);
-                System.out.println(options[i] + " added to your burger");
+                break;
             }
-            i++;
+            clientAdditions.add(options[choice]);
+            System.out.println(options[choice] + " added to your burger");
         }
         return clientAdditions;
     }

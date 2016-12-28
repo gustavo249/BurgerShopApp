@@ -13,7 +13,7 @@ public class HealthyBurger extends Hamburger {
 
     public HealthyBurger() {
         super(4.0, "rye brown bread");
-        name = "Healthy Burger";
+        this.name = "Healthy Burger";
         setAdditions(clientAdditions);
     }
 
@@ -25,6 +25,11 @@ public class HealthyBurger extends Hamburger {
     @Override
     public void setAdditions(List<String> additions) {
         this.additions = additions;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }
 
